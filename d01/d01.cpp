@@ -24,8 +24,6 @@ int main ()
 {
     unsigned long long sum = 0;
 
-    //while (!fin.eof())
-
     int mass;
     while (fin >> mass)
     {
