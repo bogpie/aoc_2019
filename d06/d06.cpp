@@ -7,8 +7,8 @@
 
 using namespace std;
 
-ifstream fin ("d06.in");
-ofstream fout ("d06.out");
+ifstream fin ("d06_in.txt");
+ofstream fout ("d06_out.txt");
 
 const int INF = INT_MAX, NNODE = 2000, LGSTR=10;
 int vCountOrbits[NNODE];

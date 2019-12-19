@@ -1,0 +1,2 @@
+part 1 : 274 detected, w/ asteroid-station : { 19 , 14 } 
+part 2 : 305 = coord2 * 100 + coord1 

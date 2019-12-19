@@ -1,0 +1,8 @@
+Part and input 1: 
+Output: 3507134798
+Halted !
+
+Part and input 2: 
+Output: 84513
+Halted !
+

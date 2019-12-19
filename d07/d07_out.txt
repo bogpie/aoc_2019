@@ -1,0 +1,4 @@
+part 1 : maximum output : 199988
+
+part 2 : maximum output : 17519904
+

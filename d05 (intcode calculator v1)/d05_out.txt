@@ -1,0 +1,19 @@
+input 1: 
+output: 0
+output: 0
+output: 0
+output: 0
+output: 0
+output: 0
+output: 0
+output: 0
+output: 0
+Needed output: 4887191
+Halted !
+
+
+input 5: 
+Needed output: 3419022
+Halted !
+
+
