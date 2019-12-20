@@ -1,0 +1,6 @@
+part 1 : 1967319
+part 2 : 1122036 FUEL produced from 999999332233 ores 
+checking for off-by-one errors: 
+1122035 FUEL produced from 999998666740 ores 
+1122036 FUEL produced from 999999332233 ores 
+1122037 FUEL produced from 1000000285662 ores 
