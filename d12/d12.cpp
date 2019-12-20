@@ -3,7 +3,6 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
-#include "d12.h"
 
 using namespace std;
 
