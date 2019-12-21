@@ -107,8 +107,8 @@ void fPart2(string line)
 	length = vDigits.size();
 	if (offset > length)
 	{
-		fout << "part 2 : offset too big!\n";
-		cout << "part 2 : offset too big!\n";
+		fout << "offset too big!";
+		cout << "offset too big!";
 		exit(1);
 	}
 
@@ -141,10 +141,9 @@ int main()
 	string line;
 	fin >> line;
 
-	cout << "part 1 almost done...\n";
 	fPart1(line);
-	cout << "part 1 done, wait a few seconds for part 2...\n";
+	cout << "part 1 done, wait a few seconds for part 2..\n";
 	fPart2(line);
-	cout << "now check the output file\n";
+
 	return 0;
 }
