@@ -249,19 +249,19 @@ void fRunProgram(State & state)
 
 pair <long long, long long > findNeighbour(pair <long long , long long > point, long long idDir)
 {
-	if (idDir == 1) //n
+	if (idDir == 1) //north
 	{
 		return make_pair(point.first - 1, point.second);
 	}
-	if (idDir == 2) //s
+	if (idDir == 2) //south
 	{
 		return make_pair(point.first + 1, point.second);
 	}
-	if (idDir == 3) //w
+	if (idDir == 3) //west
 	{
 		return make_pair(point.first, point.second-1);
 	}
-	if (idDir == 4) //w
+	if (idDir == 4) //east
 	{
 		return make_pair(point.first, point.second+1);
 	}
