@@ -41,31 +41,31 @@ void fPart1(string line)
 	generatePatterns(length, vPatterns);
 
 
-	vector <int> vDigit;
+	vector <int> vDigits;
 	for (int iCar = 0; iCar < length; ++iCar)
 	{
 		int digit = line[iCar] - '0';
-		vDigit.push_back(digit);
+		vDigits.push_back(digit);
 	}
 	for (int iStep = 1; iStep <= 100; ++iStep)
 	{
-		auto vDigitNew = vDigit;
+		auto vDigitsNew = vDigits;
 		for (int iPattern = 0; iPattern < length; ++iPattern)
 		{
 			int sum = 0;
 			for (int iDigit = 0; iDigit < length; ++iDigit)
 			{
-				sum += vDigit[iDigit] * vPatterns[iPattern][iDigit];
+				sum += vDigits[iDigit] * vPatterns[iPattern][iDigit];
 			}
-			vDigitNew[iPattern] = abs(sum) % 10;
+			vDigitsNew[iPattern] = abs(sum) % 10;
 		}
-		vDigit = vDigitNew;
+		vDigits = vDigitsNew;
 	}
 
 	fout << "part 1: ";
 	for (int iDigit = 0; iDigit < 8; ++iDigit)
 	{
-		fout << vDigit[iDigit];
+		fout << vDigits[iDigit];
 	}
 	fout << "\n";
 
@@ -74,47 +74,55 @@ void fPart1(string line)
 
 void fPart2(string line)
 {
-	vector <int> vDigit;
+	vector <int> vDigits;
 	int length = line.size();
 
 	for (int iCar = 0; iCar < length; ++iCar)
 	{
 		int digit = line[iCar] - '0';
-		vDigit.push_back(digit);
+		vDigits.push_back(digit);
 	}
+	// string "turns into" a vector of digits 
+
 
 	int offset = 0,pwr=1;
-
 	for (int iDigit = 6; iDigit >= 0; --iDigit)
 	{
-		offset += (vDigit[iDigit] * pwr);
+		offset += (vDigits[iDigit] * pwr);
 		pwr *= 10;
 	}
+	// computed offset
 
-	auto vDigitOld = vDigit;
+
+	auto vDigitsOld = vDigits;
 	const int nRepeats = 10000;
 	for (int iRepeat = 0; iRepeat < nRepeats; ++iRepeat)
 	{
-		vDigit.insert(vDigit.end(), vDigitOld.begin(), vDigitOld.end());
+		vDigits.insert(vDigits.end(), vDigitsOld.begin(), vDigitsOld.end());
 	}
+	// duplicate the input 10000 times
 
 
-	vDigit.erase(vDigit.begin(), vDigit.begin() + offset);
-	length = vDigit.size();
+	vDigits.erase(vDigits.begin(), vDigits.begin() + offset);
+	//erase everything until the offset
+
+	length = vDigits.size();
 	for (int iStep = 1; iStep <= 100; ++iStep)
 	{
 		for (int iDigit = length - 2; iDigit >= 0; --iDigit)
 		{
-			vDigit[iDigit] = (vDigit[iDigit] + vDigit[iDigit + 1]) % 10;
+			vDigits[iDigit] = (vDigits[iDigit] + vDigits[iDigit + 1]) % 10;
 		}
 	}
+	// compute partial sums 100 times
 
 	fout << "part 2: ";
 	for (int iDigit = 0; iDigit < 8; ++iDigit)
 	{
-		fout << vDigit[iDigit];
+		fout << vDigits[iDigit];
 	}
 	fout << "\n";
+	//print first 8 digits
 	
 
 }
