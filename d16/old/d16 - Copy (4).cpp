@@ -97,13 +97,13 @@ void fPart2(string line)
 	{
 		vDigit.insert(vDigit.end(), vDigitOld.begin(), vDigitOld.end());
 	}
-
-
 	vDigit.erase(vDigit.begin(), vDigit.begin() + offset);
+
 	length = vDigit.size();
 	for (int iStep = 1; iStep <= 100; ++iStep)
 	{
-		for (int iDigit = length - 2; iDigit >= 0; --iDigit)
+		// vDigit[length-1] constant 
+		for (int iDigit = length - 2; iDigit > 0; --iDigit)
 		{
 			vDigit[iDigit] = (vDigit[iDigit] + vDigit[iDigit + 1]) % 10;
 		}
@@ -115,8 +115,6 @@ void fPart2(string line)
 		fout << vDigit[iDigit];
 	}
 	fout << "\n";
-	
-
 }
 
 int main()
@@ -124,7 +122,7 @@ int main()
 	string line;
 	fin >> line;
 
-	fPart1(line);
+	//fPart1(line);
 	fPart2(line);
 
 	return 0;
