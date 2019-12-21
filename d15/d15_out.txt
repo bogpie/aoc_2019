@@ -1,0 +1,2 @@
+part 1: 222 steps to oxygen system 
+part 2: 394 minutes to fill the area 
