@@ -77,9 +77,15 @@ void findSetAngle(int x3,int y3,set < int > & setAngle, vector < pair <int,int> 
 		int y1 = y3;
 
 		double angle = findAngle(x1, y1, x2, y2, x3, y3);
-		int angleAprox = (int)(angle * 10);
+		int angleApprox = (int)(angle * 10); 
 
-		setAngle.insert(angleAprox);
+		// using a vector (vLines) whose index is a specific angle, I want to identify the asteroids which form that angle with a specific asteroid and the vertical axis (they would all be on the same LINE)
+		// I want to make an approximation, so 47.123 degrees would become 47 degrees
+		// but, working with 360-maximum degree angles is not precise enough, so I will work with 10 times the angle, converted into int for approximation
+		// that means 47.123 degrees becomes 471.23 degrees, and then approximated to 471. 
+		// this was before I learned about maps some days later
+
+		setAngle.insert(angleApprox);
 
 		int debug = 1;
 	}
@@ -103,14 +109,14 @@ void fDraw(pair < int, int > station, vector < set < pair < int, pair < int, int
 		int x1 = x3 - 1;
 		int y1 = y3;
 		double angle = findAngle(x1, y1, x2, y2, x3, y3);
-		int angleAprox = (int)(angle * 10);
+		int angleApprox = (int)(angle * 10);
 
 		int manhattan = abs(x2 - x3) + abs(y2 - y3);
 		pair < int, int > asteroid = { x2,y2 };
 		pair < int, int > pairCoord = make_pair(x2, y2);
 		pair < int, pair < int, int > > pairAsteroid = make_pair(manhattan, pairCoord);
 
-		vLines[angleAprox].insert(pairAsteroid);
+		vLines[angleApprox].insert(pairAsteroid);
 	}
 }
 
