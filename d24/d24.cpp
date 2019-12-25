@@ -102,7 +102,7 @@ void fPart1(vector <string> layout)
 		matrix[iTall + 1].push_back(0);
 	}
 
-	// decided to use an int matrix for part 1
+	// decided to use an int matrix for part 1, values are 0 for empty space and 1 for bug
 	
 	set < vector < vector < int > > > states;
 	states.insert(matrix);
