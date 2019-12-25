@@ -244,10 +244,10 @@ int main()
 	vector <long long> vProg;
 	fParse(vProg);
 
-	long long input; //input =1; fRunProgram(input, vProg);
+	long long input; 
 	
 	int x, y, nPulled = 0;;
-	queue<int> inputQue;
+	queue<int> inputQue; // queue used for inputs
 	for (x = 0; x < 50; ++x)
 	{
 		for (y = 0; y < 50; ++y)

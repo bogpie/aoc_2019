@@ -44,9 +44,11 @@ void bfs(Matrix tab,Point point,vector < vector < Edge > > & vEdges,int vLength[
 	queue <Queued> que;
 
 	char car = tab[point.first][point.second];
-	
-	//int nSteps = 0;
+
 	int bitmask=0;
+	// keys/doors 26 25 ... 0
+	// bitmask	   0  0.....0
+
 	que.push(make_tuple(point, 0, bitmask));
 	while (!que.empty())
 	{
@@ -117,7 +119,7 @@ void dijkstra(char node, vector < vector < Edge > > vEdges, int nKeys,int & ans)
 		Node node = get<1>(state);
 		int bitmaskNode= get<2>(state);
 
-		if (bitmaskNode == all)
+		if (bitmaskNode == all) 
 		{
 			ans = dist;
 			return;
