@@ -28,7 +28,7 @@ int main ()
     while (fin >> mass)
     {
         int fuelReq = 0 ;
-        ///part1 (mass,fuelReq);
+        //part1 (mass,fuelReq); // for part 1 run this & don't run below function
         part2 (mass,fuelReq);
         sum += fuelReq;
     }
