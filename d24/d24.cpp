@@ -90,7 +90,6 @@ void fPart1(vector <string> layout)
 {
 
 	vector < vector < int > > matrix(7);
-
 	matrix[0].resize(7, 0);
 	matrix[6].resize(7, 0);
 	for (int iTall = 0; iTall < layout.size(); ++iTall)
@@ -103,6 +102,8 @@ void fPart1(vector <string> layout)
 		matrix[iTall + 1].push_back(0);
 	}
 
+	// decided to use an int matrix for part 1
+	
 	set < vector < vector < int > > > states;
 	states.insert(matrix);
 
@@ -146,7 +147,6 @@ void fPart2(vector <string> layout)
 
 	int low = 199;
 	int high = 201;
-
 	for (int iMinute=1;iMinute<=200;++iMinute)
 		for (int iFloor = low; iFloor <= high; ++iFloor)
 		{
@@ -159,7 +159,6 @@ void fPart2(vector <string> layout)
 				}
 			}
 		}
-
 }
 
 int main()
