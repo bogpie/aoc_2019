@@ -24,6 +24,10 @@ void fGasesteDiv(int numar, int divMinim, vector <int>& vDiv)
 		if (numar % div == 0)
 		{
 			vDiv.push_back(div);
+		}
+	}
+}
+
 void fPrint(string str, vector <int> vDiv)
 {
 	vector <int>::iterator it;
